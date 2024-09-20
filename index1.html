@@ -1,0 +1,40 @@
+<span class="hover-word"></span>
+
+
+<style>
+
+
+.hover-word {
+  display: inline-block;
+  position: relative;
+  padding-bottom: 2px;
+  color: black;
+  transition: color 0.5s ease; /* Optional for color change */
+}
+
+.hover-word::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: black;
+  transition: width 0.5s ease;
+}
+
+.hover-word:hover::before {
+  width: 100%;
+}
+
+/* Change the content on hover using the ::after pseudo-element */
+.hover-word::after {
+  content: 'Hover on me';
+  transition: content 0.5s ease;
+}
+
+.hover-word:hover::after {
+  content: 'Finally';
+}
+
+</style>
